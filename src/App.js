@@ -24,7 +24,7 @@ class NameForm extends React.Component {
     var ivalue = event.target.value;
 	if (ivalue.length > 2) {
 	var axios = require('axios');
-    axios.get('http://bepretty.one/get_address?query='+ivalue)
+    axios.get('/get_address?query='+ivalue)
 		.then(res => {
 			const predicts = res.data[1];
 			//console.log(res.data[1])
