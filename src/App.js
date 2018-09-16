@@ -18,6 +18,7 @@ class NameForm extends React.Component {
     this.state = {value: '', predicts: []};
 
     this.handleChange = this.handleChange.bind(this);
+	this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(event) {
@@ -27,7 +28,6 @@ class NameForm extends React.Component {
     axios.get('/get_address?query='+ivalue)
 		.then(res => {
 			const predicts = res.data[1];
-			//console.log(res.data[1])
 			this.setState(
 				(state, props) => ({
 				  predicts
@@ -35,9 +35,13 @@ class NameForm extends React.Component {
 		  });	
 	} else {
 		this.setState({ predicts: [] });
-		console.log(ivalue);
 		}
 	this.setState({ value: ivalue });
+  }
+  
+  handleClick(event) {
+    var livalue = event.target.innerHTML;
+	this.setState({ value: livalue });
   }
 
   render() {
@@ -51,7 +55,7 @@ class NameForm extends React.Component {
 		  <div className="Result">
 			<ul>
 			  {this.state.predicts.map(predict =>
-				<li key={predict[0]}>{predict[1]}</li>
+				<li key={predict[0]} onClick={this.handleClick} >{predict[1]}</li>
 			  )}
 			</ul>
 		  </div>
