@@ -27,7 +27,7 @@ class NameForm extends React.Component {
 	var axios = require('axios');
     axios.get('/get_address?query='+ivalue)
 		.then(res => {
-			const predicts = res.data[1];
+			const predicts = res.data[1].slice(0, 6);
 			this.setState(
 				(state, props) => ({
 				  predicts
