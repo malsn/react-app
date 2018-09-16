@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.App h1 {
+  font-size: 30px;
+  margin: 2em;
+  text-transform: uppercase;
+}
+
+.App form, .App div.Result {
+	max-width: 600px;
+	min-width: 320px;
+	position: relative;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #FFF;
+}
+
+.App div.Result {
+	padding-top: 0px;
+	}
+
+.App form input[type="text"] {
+	height: 30px;
+	padding: 5px;
+	text-align: left;
+	font-size: 18px;
+}
+
+div.Result ul {
+	display: block;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+div.Result ul li {
+	display: block;
+	list-style-type: none;
+	padding: 5px;	
+	text-align: left;
+	font-size: 14px;
+	border-bottom: 1px solid #F5F5F5;
+}
+
+div.Result ul li:hover {
+	cursor: pointer;
+	background-color: #F5F5F5;
+}  
