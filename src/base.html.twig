@@ -1,15 +1,15 @@
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Добро пожаловать!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-		<link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
-    </head>
-    <body>
-		<div id="root"></div>
-        {% block body %}{% endblock %}		
-		<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Добро пожаловать!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+<body>
+<div id="root"></div>
+{% block body %}{% endblock %}
+<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+{% block javascripts %}{% endblock %}
+</body>
 </html>
